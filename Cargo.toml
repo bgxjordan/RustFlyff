@@ -1,0 +1,29 @@
+[package]
+name = "RustFlyff"
+version = "0.1.0"
+authors = ["bgxjordan"]
+edition = "2018"
+
+[workspace]
+members = [
+    "servers/database_server",
+    "servers/login_server",
+    "servers/cluster_server",
+    "servers/world_server"
+]
+
+[[bin]]
+name = "1_database_server"
+path = "servers/database_server/src/main.rs"
+
+[[bin]]
+name = "2_login_server"
+path = "servers/login_server/src/main.rs"
+
+[[bin]]
+name = "3_cluster_server"
+path = "servers/cluster_server/src/main.rs"
+
+[[bin]]
+name = "4_world_server"
+path = "servers/world_server/src/main.rs"
