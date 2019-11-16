@@ -1,0 +1,9 @@
+[package]
+name = "login_server"
+version = "0.1.0"
+authors = ["bgxjordan"]
+edition = "2018"
+
+[dependencies]
+server_common = { path = "../../libs/server_common" }
+contract_databaseserver_loginserver = { path = "../../libs/server_contracts/database_server/contract_databaseserver_loginserver" }
