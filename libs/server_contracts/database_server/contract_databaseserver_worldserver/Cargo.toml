@@ -1,8 +1,0 @@
-[package]
-name = "contract_databaseserver_worldserver"
-version = "0.1.0"
-authors = ["bgxjordan"]
-edition = "2018"
-
-[dependencies]
-contract_databaseserver_common = { path = "../contract_databaseserver_common" }

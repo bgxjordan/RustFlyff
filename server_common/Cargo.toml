@@ -1,7 +1,8 @@
 [package]
-name = "contract_databaseserver_common"
+name = "server_common"
 version = "0.1.0"
 authors = ["bgxjordan"]
 edition = "2018"
 
 [dependencies]
+tokio = "0.1.22"
