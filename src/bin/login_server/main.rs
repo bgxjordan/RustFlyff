@@ -3,12 +3,9 @@ mod server;
 
 use config::LoginConfigParser;
 use server_common::{FileParser, Server};
-use server_common::config::TcpServerConfig;
 
-use std::net::SocketAddr;
 use std::path::Path;
 use tokio;
-use tokio::net::TcpListener;
 use tokio::prelude::*;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {

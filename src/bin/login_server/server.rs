@@ -3,10 +3,10 @@ use crate::config::LoginConfig;
 
 use tokio::net::{TcpStream, TcpListener};
 use tokio::prelude::*;
-use tokio::codec::{Decoder, BytesCodec};
+use tokio::codec::{Decoder};
 use server_common::config::TcpServerConfig;
 use std::net::SocketAddr;
-use tokio::net::tcp::Incoming;
+use server_common::packet::codec::FlyffPacketCodec;
 
 pub struct LoginServer;
 
@@ -35,12 +35,12 @@ impl Server<LoginConfig> for LoginServer {
 pub fn login_process(client_sock: TcpStream) -> FlyffClientProcessFuture {
     let client_ip = client_sock.peer_addr()
         .expect("Failed to get client IP");
-    let (_sock_out, sock_in) = BytesCodec::new().framed(client_sock).split();
+    let (_sock_out, sock_in) = FlyffPacketCodec::new().framed(client_sock).split();
 
     Box::new(
 
-        sock_in.for_each(move |bytes| {
-            println!("[{}] bytes = {:?}", client_ip.to_string(), bytes);
+        sock_in.for_each(move |client_packet| {
+            println!("[{}] bytes = {:?}", client_ip.to_string(), client_packet);
             Ok(())
         })
             .and_then(move |()| {

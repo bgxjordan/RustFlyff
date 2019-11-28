@@ -5,4 +5,6 @@ authors = ["bgxjordan"]
 edition = "2018"
 
 [dependencies]
+bytes = "0.4.12"
 tokio = "0.1.22"
+to_vec = "0.1"
