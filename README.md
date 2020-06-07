@@ -5,12 +5,22 @@ Flyff v6 emulator written in Rust. Its intent is to be a lightweight, extensible
 
 Legal
 ---
-This project is licenced under the GPLv3. Here's the important points to that:
-* You are free to use and distribute this software, but you cannot sell it.
-* You are free to modify the source code, but your changes must be published.
-* If you use ("borrow") code from this project, the GPL requires that your project also comply with the GPL requirements.
+This project is licenced under the GNU AGPLv3. Here's the important points to that:
+* You are free to to modify this project and use it. However, any changes that you make to this project must have published source code. 
+* If you use this project in a derived work in any way, you must publish the source code for your derived work.
+* These restrictions apply whether you are
+  1. Distributing your changes to this project or derived work as binaries
+  2. Providing a software service such as a private server using either your changes to this project or a derived work
+  
+The distribution of this software or any derived work must be **free**. However, the sale of support for this software (orginal or modifed) or any dervied work is allowed under the following conditions:
+1. The entities involved in any exchange of monies regarding this software assume full liability for any lawsuits or legal issues and their outcomes.
+2. The entities involved in any exchange of monies regarding this software will not involve the author(s) and contributors(s) of this project in any lawsuits or legal issues, or file any lawsuits against them as a result of any fees, penalties, other losses, or legal ramifications related to said lawsuits or legal issues.
 
-This software provides no assurances or warranties. The author(s) and contributor(s) are not liable. As with any software, if you intend to expose this to the internet, you *must* practice good security. 
+By distributing binaries as a modified or dervied work of this project, or hosting a private server using either, you agree that
+1. You assume full liability for any lawsuits or legal issues and their outcomes related to this software or the derived work.
+2. You will not involve the author(s) and contributors(s) of this project in any lawsuites or legal issues, or file any lawsuits against them as a result of any fees, penalties, other losses, or legal ramifications related to said lawsuits or legal issues.
+
+This software provides no assurances or warranties. The author(s) and contributor(s) are not liable. As with any software, if you intend to expose this to the internet, you *must* practice good security.
 
 Software Requirements
 ---
