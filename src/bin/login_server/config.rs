@@ -1,22 +1,26 @@
 use server_common::FileParser;
 use server_common::config::TcpServerConfig;
 use std::path::Path;
-use std::io;
+use std::io::Result;
+use std::borrow::Borrow;
+use crate::server::LoginServer;
+use std::net::SocketAddr;
+
+pub const FLYFF_CLIENT_LOGIN_PORT: u16 = 28000;
 
 pub struct LoginConfig {
     realm_id: String,
-    ip_address: String,
-    port: u16,
+    bind_address: Option<String>,
     queue_address: String,
 }
 
 impl TcpServerConfig for LoginConfig {
-    fn ip_address(&self) -> String {
-        self.ip_address.clone()
+    fn bind_address(&self) -> String {
+        self.bind_address.as_ref().unwrap_or(&String::from("localhost")).clone()
     }
 
     fn port(&self) -> u16 {
-        self.port.clone()
+        FLYFF_CLIENT_LOGIN_PORT
     }
 }
 
@@ -24,8 +28,7 @@ impl LoginConfig {
     pub(crate) fn new() -> LoginConfig {
         LoginConfig {
             realm_id: String::new(),
-            ip_address: String::new(),
-            port: 23000,
+            bind_address: None,
             queue_address: String::new()
         }
     }
@@ -36,7 +39,7 @@ impl LoginConfig {
     }
 
     fn with_ip_address(mut self, addr: String) -> LoginConfig {
-        self.ip_address = addr;
+        self.bind_address = Some(addr);
         return self;
     }
 
@@ -55,7 +58,7 @@ impl LoginConfigParser {
 }
 
 impl FileParser<LoginConfig> for LoginConfigParser {
-    fn parse(self, _: &Path) -> Result<LoginConfig, io::Error> {
+    fn parse(self, _: &Path) -> Result<LoginConfig> {
         Ok(LoginConfig::new()
                .with_realm_id("1".to_string())
                .with_ip_address("127.0.0.1".to_string())

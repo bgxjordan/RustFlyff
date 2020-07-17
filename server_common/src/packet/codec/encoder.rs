@@ -1,9 +1,10 @@
-use tokio::codec::Encoder;
+//use tokio::codec::Encoder;
 use tokio::io;
 use bytes::BytesMut;
-use crate::packet::FlyffServerPacket;
-use crate::packet::codec::FlyffPacketCodec;
+//use crate::packet::FlyffServerPacket;
+//use crate::packet::codec::FlyffPacketCodec;
 
+/*
 impl Encoder for FlyffPacketCodec {
     type Item = FlyffServerPacket;
     type Error = io::Error;
@@ -12,3 +13,4 @@ impl Encoder for FlyffPacketCodec {
         unimplemented!()
     }
 }
+ */

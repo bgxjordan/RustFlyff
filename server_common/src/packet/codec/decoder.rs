@@ -1,11 +1,12 @@
 use bytes::{BytesMut, Buf, BufMut};
-use tokio::codec::Decoder;
-use tokio::io::ErrorKind;
+// use tokio::codec::Decoder;
+// use tokio::io::ErrorKind;
 use std::io::{Cursor, Read};
 use std::cmp::max;
-use crate::packet::{FlyffClientPacket, FLYFF_CLIENT_START_HEADER, FlyffPacketCommand};
-use crate::packet::codec::FlyffPacketCodec;
+//use crate::packet::{FlyffClientPacket, FLYFF_CLIENT_START_HEADER, FlyffPacketCommand};
+//use crate::packet::codec::FlyffPacketCodec;
 
+/*
 impl Decoder for FlyffPacketCodec {
     type Item = FlyffClientPacket;
     type Error = tokio::io::Error;
@@ -110,3 +111,5 @@ mod decoder_tests {
         assert!(codec.decode(&mut bytes).unwrap().is_none());
     }
 }
+
+ */

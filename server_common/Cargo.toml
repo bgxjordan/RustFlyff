@@ -5,6 +5,7 @@ authors = ["bgxjordan"]
 edition = "2018"
 
 [dependencies]
-bytes = "0.4.12"
-tokio = "0.1.22"
+async-trait = "0.1.36"
+bytes = "0.5"
+tokio = { version = "0.2", features = ["full"] }
 to_vec = "0.1"

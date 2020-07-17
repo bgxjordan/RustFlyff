@@ -5,7 +5,7 @@ use bytes::{BufMut, Buf};
 pub mod codec;
 
 const FLYFF_CLIENT_START_HEADER: u8 = 0x5e;
-
+/*
 #[derive(Debug)]
 pub struct FlyffClientPacket {
     unknown_i32: i32,
@@ -87,3 +87,5 @@ impl FlyffPacketCommand {
         cmd
     }
 }
+
+ */

@@ -1,9 +1,10 @@
-use crate::packet::FlyffClientPacket;
+//use crate::packet::FlyffClientPacket;
 use std::io::Cursor;
 
 mod decoder;
 mod encoder;
 
+/*
 pub struct FlyffPacketCodec {
     next_index: usize,
 
@@ -47,3 +48,5 @@ impl FlyffPacketCodec {
         Ok(None)
     }
 }
+
+ */
